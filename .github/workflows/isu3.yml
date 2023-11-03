@@ -1,7 +1,7 @@
 name: 'isu3'
 on:
-  push:
-    branches:
+  #push:
+  #  branches:
   #    - main
   workflow_dispatch:
 jobs:
