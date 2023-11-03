@@ -73,8 +73,9 @@
     mode: '0755'
   ignore_errors: yes
 
-#- name: shell
-#  shell: sh /home/isucon/private_isu/webapp/sql/init.sh
+- name: shell
+  shell: sh /home/isucon/private_isu/webapp/sql/init.sh
+  ignore_errors: yes
 
 - name: mysql is restarted
   systemd:
