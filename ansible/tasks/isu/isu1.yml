@@ -67,15 +67,15 @@
     path: /var/log/mysql/mysql-slow.sql
     state: absent
 
-- name: chmod
-  file: 
-    path: /home/isucon/private_isu/webapp/sql/init.sh
-    mode: '0755'
-  ignore_errors: yes
+#- name: chmod
+#  file: 
+#    path: /home/isucon/private_isu/webapp/sql/init.sh
+#    mode: '0755'
+#  ignore_errors: yes
 
-- name: shell
-  shell: sh /home/isucon/private_isu/webapp/sql/init.sh
-  ignore_errors: yes
+#- name: shell
+#  shell: sh /home/isucon/private_isu/webapp/sql/init.sh
+#  ignore_errors: yes
 
 - name: mysql is restarted
   systemd:

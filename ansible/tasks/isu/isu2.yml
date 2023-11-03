@@ -12,8 +12,8 @@
 
 - name: Git checkout
   git:
-    repo: https://github.com/megutamago/my-ansible-isu-templete.git
-    dest: /home/isucon/my-ansible-isu-templete
+    repo: https://github.com/megutamago/prac-ansible-isu-templete.git
+    dest: /home/isucon/prac-ansible-isu-templete
 
 - name: Copy
   copy:
@@ -29,7 +29,7 @@
 
 - name: Copy
   copy:
-    src: /home/isucon/my-ansible-isu-templete/webapp
+    src: /home/isucon/prac-ansible-isu-templete/webapp
     dest: /home/isucon/private_isu/
     owner: isucon
     group: isucon
@@ -38,7 +38,7 @@
 
 - name: remove
   file: 
-    path: /home/isucon/my-ansible-isu-templete
+    path: /home/isucon/prac-ansible-isu-templete
     state: absent
 
 ### Execute as login shell
