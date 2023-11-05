@@ -12,7 +12,7 @@ var:
     #- tasks_for_isu/graphviz.yml
     #- tasks_for_isu/mysql.yml
     #- tasks_for_isu/netdata.yml
-    #- tasks_for_isu/nginx.yml
+    - tasks_for_isu/nginx.yml
     #- tasks_for_isu/parameter.yml
     #- tasks_for_isu/percona.yml
     #- tasks_for_isu/redis.yml
