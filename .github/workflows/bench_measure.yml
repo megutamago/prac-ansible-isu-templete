@@ -1,4 +1,4 @@
-name: 'Bench'
+name: 'Bench Measure'
 on:
   #push:
   #  branches:
@@ -24,6 +24,7 @@ jobs:
             curl -o trace.out http://localhost:6060/debug/pprof/trace?seconds=60 &
   Bench:
     name: "Bench Job"
+    needs: Pprof
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -41,6 +42,7 @@ jobs:
             sudo -u isucon /home/isucon/private_isu.git/benchmarker/bin/benchmarker -u /home/isucon/private_isu.git/benchmarker/userdata -t http://${{ vars.HOST1 }}
   Measure:
     name: "Measure Job"
+    needs: Bench
     runs-on: ubuntu-latest
     permissions:
       contents: read
