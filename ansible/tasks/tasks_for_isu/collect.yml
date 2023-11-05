@@ -11,3 +11,8 @@
 - name: show stdout
   debug:
     msg: "{{ result.stdout_lines }}"
+
+- name: remove file
+  file: 
+    path: /tmp/collect.sh
+    state: absent

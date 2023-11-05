@@ -19,3 +19,12 @@ jobs:
           port: 22
           script: |
             sudo curl -o /tmp/trace.out http://localhost:6060/debug/pprof/trace?seconds=3
+      - name: Exe pprof
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ vars.HOST1 }}
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            sudo /home/isucon/.local/go/bin/go tool trace -http=localhost:1080 /tmp/trace.out &
