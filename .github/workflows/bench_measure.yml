@@ -22,8 +22,8 @@ jobs:
           port: 22
           script: |
             curl -o trace.out http://localhost:6060/debug/pprof/trace?seconds=60 &
-  Bench Measure:
-    name: "Bench Measure Job"
+  Bench:
+    name: "Bench Job"
     runs-on: ubuntu-latest
     permissions:
       contents: read
