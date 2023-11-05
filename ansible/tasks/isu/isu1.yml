@@ -11,9 +11,10 @@
     enabled: true
 
 - name: Git checkout
+  vars_files: ../vars/var1.yml
   git:
-    repo: https://github.com/megutamago/prac-ansible-isu-templete.git
-    dest: /home/isucon/prac-ansible-isu-templete
+    repo: "https://github.com/{{ env.git_user }}/{{ env.git_repo }}.git"
+    dest: /home/isucon/{{ env.git_repo }}
 
 - name: Copy
   copy:

@@ -7,6 +7,6 @@
   vars_files: ../vars/var3.yml
   tasks:
     - include_tasks: "../tasks/{{ item }}"
-      loop: "{{ var.isu3_tasks_for_isu }}"
+      with_items: "{{ var.isu3_tasks_for_isu }}"
     - include_tasks: "../tasks/{{ item }}"
-      loop: "{{ var.isu3_tasks }}"
+      with_items: "{{ var.isu3_tasks }}"
