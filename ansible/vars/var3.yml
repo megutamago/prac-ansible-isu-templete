@@ -1,0 +1,17 @@
+var:
+  isu1_tasks:
+    #- isu/isu_pre.yml
+    #- isu/isu1.yml
+    #- isu/isu_add.yml
+  isu1_tasks_for_isu:
+    #- common/common.yml
+    #- monitoring/fluent-bit.yml
+    #- monitoring/node_exporter.yml
+    #- tasks_for_isu/alp.yml
+    #- tasks_for_isu/graphviz.yml
+    #- tasks_for_isu/mysql.yml
+    #- tasks_for_isu/netdata.yml
+    #- tasks_for_isu/nginx.yml
+    #- tasks_for_isu/parameter.yml
+    #- tasks_for_isu/percona.yml
+    #- tasks_for_isu/redis.yml
