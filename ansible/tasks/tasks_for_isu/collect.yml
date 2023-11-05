@@ -1,0 +1,13 @@
+- name: Copy
+  copy:
+    src: ../../files/collect.sh
+    dest: /tmp/collect.sh
+    mode: '0755'
+
+- name: shell
+  shell: sh /tmp/collect.sh
+
+- name: remove file
+  file: 
+    path: /tmp/collect.sh
+    state: absent
