@@ -20,10 +20,9 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
-          script: |
-            cat shell/collect.sh
+        run: cat shell/collect.sh
   Shell2:
-    name: "Shell1 Job"
+    name: "Shell2 Job"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -40,7 +39,7 @@ jobs:
           script: |
             cat shell/collect.sh
   Shell3:
-    name: "Shell1 Job"
+    name: "Shell3 Job"
     runs-on: ubuntu-latest
     permissions:
       contents: read
