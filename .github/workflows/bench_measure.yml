@@ -24,7 +24,6 @@ jobs:
             sudo -u isucon curl -o ~/trace.out http://localhost:6060/debug/pprof/trace?seconds=60 &
   Bench:
     name: "Bench Job"
-    needs: Pprof
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -68,8 +67,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            cat /var/log/mysql/mysql-slow.sql | grep -v "INSERT INTO \`posts\`" > /var/log/mysql/mysql-slow.sql
-            pt-query-digest /var/log/mysql/mysql-slow.sql
+            sudo sed -i '/^INSERT INTO `posts`/d' /var/log/mysql/mysql-slow.sql
+            sudo pt-query-digest /var/log/mysql/mysql-slow.sql
       - name: Exe pprof
         uses: appleboy/ssh-action@v1.0.0
         with:
