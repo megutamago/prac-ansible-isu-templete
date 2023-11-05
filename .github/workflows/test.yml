@@ -1,0 +1,21 @@
+name: 'test'
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    name: "test"
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Exe
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ vars.HOST1 }}
+          username: ubuntu
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            sudo -u isucon curl -o ~/trace.out http://localhost:6060/debug/pprof/trace?seconds=3
