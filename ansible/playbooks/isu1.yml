@@ -8,6 +8,6 @@
   tasks:
     - include: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks_for_isu }}"
-      ignore_errors: yes
+      when: "{{ var.isu1_tasks_for_isu }}" is defined
     - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks }}"
