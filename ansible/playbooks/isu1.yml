@@ -1,10 +1,12 @@
 - name: tasks_for_isu
   hosts: isu1
-  gather_facts: no
+  gather_facts: false
   user: ubuntu
-  become: yes
+  become: true
   max_fail_percentage: 0
-  tasks:
+  vars_files: ../var.yml
+  tasks: "{{ item }}"
+  loop: "{{ var['isu1_tasks_for_isu'] }}"  
     #- import_tasks : ../tasks/common/common.yml
     #- import_tasks : ../tasks/monitoring/fluent-bit.yml
     #- import_tasks : ../tasks/monitoring/node_exporter.yml
@@ -19,11 +21,12 @@
 
 - name: isu
   hosts: isu1
-  gather_facts: no
+  gather_facts: false
   user: ubuntu
-  become: yes
+  become: true
   max_fail_percentage: 0
+  vars_files: ../var.yml
   tasks:
-    - import_tasks : ../tasks/isu/isu_pre.yml
+    #- import_tasks : ../tasks/isu/isu_pre.yml
     #- import_tasks : ../tasks/isu/isu1.yml
     #- import_tasks : ../tasks/isu/isu_add.yml
