@@ -389,10 +389,10 @@ func getIndex(w http.ResponseWriter, r *http.Request) {
 	results := []Post{}
 
 	err := db.Select(&results,
-		"SELECT posts.id, posts.user_id, posts.body, posts.mime, posts.created_at FROM posts"+" "+
-		"JOIN users ON users.id = posts.user_id"+" "+
-		"WHERE users.del_flg = 0"+" "+
-		"ORDER BY posts.created_at DESC LIMIT 20")
+		"SELECT p.id, p.user_id, p.body, p.mime, p.created_at FROM `posts` AS p"+" "+
+		"JOIN `users` AS u ON (p.user_id=u.id)"+" "+
+		"WHERE u.del_flg = 0"+" "+
+		"ORDER BY p.created_at DESC LIMIT 20")
 
 	if err != nil {
 		log.Print(err)
