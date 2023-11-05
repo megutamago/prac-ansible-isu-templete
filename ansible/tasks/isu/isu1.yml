@@ -12,8 +12,8 @@
 
 - name: Git checkout
   git:
-    repo: https://github.com/megutamago/{{ git_repo }}.git
-    dest: /home/isucon/
+    repo: "https://github.com/{{ git_user }}/{{ git_repo }}.git"
+    dest: "{{ home_dir }}/{{ git_repo }}"
 
 - name: Copy
   copy:

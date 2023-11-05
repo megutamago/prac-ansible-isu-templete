@@ -8,9 +8,9 @@
     - ../vars/env.yml
     - ../vars/var1.yml
   tasks:
-    - include: "../tasks/{{ item }}"
+    - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks_for_isu }}"
       when: var.isu1_tasks_for_isu
-    - include: "../tasks/{{ item }}"
+    - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks }}"
       when: var.isu1_tasks
