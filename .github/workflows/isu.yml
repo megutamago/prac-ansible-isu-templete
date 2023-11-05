@@ -1,11 +1,11 @@
-name: 'isu1'
+name: 'isu'
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 jobs:
-  Ansible1:
+  Ansible:
     name: "Ansible1 Job"
     runs-on: ubuntu-latest
     permissions:
@@ -20,9 +20,11 @@ jobs:
           directory: ./ansible
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           inventory: |
-            [isu]
-            ${{ vars.HOST1 }}
+            [isu1]
+            ${{ vars.HOST1 }
+            [isu2]
             ${{ vars.HOST2 }}
+            [isu3]
             ${{ vars.HOST3 }}
           options: |
             --inventory .hosts
