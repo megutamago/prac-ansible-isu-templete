@@ -16,5 +16,5 @@
     remote_src: yes
   ignore_errors: yes
 
-#- name: shell
-#  shell: systemctl restart sshd
+- name: shell
+  shell: systemctl restart sshd
