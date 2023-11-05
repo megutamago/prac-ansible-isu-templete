@@ -70,7 +70,7 @@ rm -f /tmp/pattern.txt /tmp/systemd-info.txt /tmp/result.txt
 mysql -u isuconp -pisuconp isuconp -e "SHOW DATABASES;"
 mysql -u isuconp -pisuconp isuconp -e "SHOW TABLES;"
 
-mysql -u isuconp -pisuconp isuconp -e "SHOW VARIABLES;"
+#mysql -u isuconp -pisuconp isuconp -e "SHOW VARIABLES \G"
 
 mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE comments \G"
 mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE posts \G"
