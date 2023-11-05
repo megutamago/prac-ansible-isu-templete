@@ -7,6 +7,14 @@
   shell: mysql -u isuconp -pisuconp isuconp -e "alter table posts add index posts_order_idx (created_at DESC);"
   ignore_errors: yes
 
+#- name: shell
+#  shell: mysql -u isuconp -pisuconp isuconp -e "ALTER TABLE `comments` ADD INDEX `idx_user_id` (`user_id`);"
+#  ignore_errors: yes
+
+#- name: shell
+#  shell: mysql -u isuconp -pisuconp isuconp -e "ALTER TABLE `posts` ADD INDEX `posts_user_idx` (`user_id`,`created_at` DESC);"
+#  ignore_errors: yes
+
 - name: mysql is restarted
   systemd:
     name: mysql
