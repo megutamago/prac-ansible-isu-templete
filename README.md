@@ -1,3 +1,6 @@
 # prac-ansible-isu-templete
 
-test
+```
+sudo go tool trace -http=localhost:1080 /tmp/trace.out
+
+```
