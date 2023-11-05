@@ -1,6 +1,7 @@
 #!/bin/bash
 set -eu
 
+# systemctl
 cat <<EOF > /tmp/pattern.txt
 apparmor.service
 apport.service
@@ -63,3 +64,23 @@ systemctl list-units --all --type=service | grep -v inactive > /tmp/systemd-info
 grep -vf /tmp/pattern.txt /tmp/systemd-info.txt > /tmp/result.txt
 cat /tmp/result.txt
 rm -f /tmp/pattern.txt /tmp/systemd-info.txt /tmp/result.txt
+
+
+# DB info
+mysql -u isuconp -pisuconp isuconp -e "SHOW DATABASES;"
+mysql -u isuconp -pisuconp isuconp -e "SHOW TABLES;"
+
+mysql -u isuconp -pisuconp isuconp -e "SHOW VARIABLES;"
+
+mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE comments \G"
+mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE posts \G"
+mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE users \G"
+
+mysql -u isuconp -pisuconp isuconp -e "show index from comments\G"
+mysql -u isuconp -pisuconp isuconp -e "show index from posts\G"
+
+
+# MySQLTuner-perl
+wget http://mysqltuner.pl/ -O /tmp/mysqltuner.pl
+perl /tmp/mysqltuner.pl
+rm -f /tmp/mysqltuner.pl
