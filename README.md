@@ -1,6 +1,9 @@
 # prac-ansible-isu-templete
 
 ```
+# mysql
+mysql -u isuconp -pisuconp isuconp
+
 # pprof
 sudo go tool trace -http=localhost:1080 /tmp/trace.out
 
