@@ -8,7 +8,6 @@ var:
     #- monitoring/fluent-bit.yml
     #- monitoring/node_exporter.yml
     - tasks_for_isu/alp.yml
-    - tasks_for_isu/collect.yml
     - tasks_for_isu/graphviz.yml
     - tasks_for_isu/mysql.yml
     #- tasks_for_isu/netdata.yml
