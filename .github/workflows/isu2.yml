@@ -1,12 +1,12 @@
-name: 'isu'
+name: 'isu2'
 on:
-  push:
-    branches:
-      - main
+  #push:
+  #  branches:
+  #    - main
   workflow_dispatch:
 jobs:
-  Ansible:
-    name: "Ansible1 Job"
+  Ansible2:
+    name: "Ansible2 Job"
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -16,15 +16,11 @@ jobs:
       - name: Run playbook
         uses: dawidd6/action-ansible-playbook@v2
         with:
-          playbook: playbooks/isu.yml
+          playbook: playbooks/isu2.yml
           directory: ./ansible
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           inventory: |
-            [isu1]
-            ${{ vars.HOST1 }}
             [isu2]
             ${{ vars.HOST2 }}
-            [isu3]
-            ${{ vars.HOST3 }}
           options: |
             --inventory .hosts
