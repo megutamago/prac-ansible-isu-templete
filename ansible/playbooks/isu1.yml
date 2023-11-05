@@ -4,7 +4,9 @@
   user: ubuntu
   become: true
   max_fail_percentage: 0
-  vars_files: ../vars/var1.yml
+  vars_files:
+    - ../vars/env.yml
+    - ../vars/var1.yml
   tasks:
     - include: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks_for_isu }}"
