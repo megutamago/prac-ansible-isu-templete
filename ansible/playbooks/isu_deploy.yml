@@ -1,0 +1,38 @@
+- name: isu
+  hosts: isu1
+  gather_facts: false
+  user: ubuntu
+  become: true
+  max_fail_percentage: 0
+  vars_files: ../var.yml
+  tasks:
+    - include_tasks: "../tasks/{{ item }}"
+      loop: "{{ var.isu1_tasks_for_isu }}"
+    - include_tasks: "../tasks/{{ item }}"
+      loop: "{{ var.isu1_tasks }}"
+
+#- name: isu
+#  hosts: isu2
+#  gather_facts: false
+#  user: ubuntu
+#  become: true
+#  max_fail_percentage: 0
+#  vars_files: ../var.yml
+#  tasks:
+#    - include_tasks: "../tasks/{{ item }}"
+#      loop: "{{ var.isu2_tasks_for_isu }}"
+#    - include_tasks: "../tasks/{{ item }}"
+#      loop: "{{ var.isu2_tasks }}"
+
+#- name: isu
+#  hosts: isu3
+#  gather_facts: false
+#  user: ubuntu
+#  become: true
+#  max_fail_percentage: 0
+#  vars_files: ../var.yml
+#  tasks:
+#    - include_tasks: "../tasks/{{ item }}"
+#      loop: "{{ var.isu3_tasks_for_isu }}"
+#    - include_tasks: "../tasks/{{ item }}"
+#      loop: "{{ var.isu3_tasks }}"
