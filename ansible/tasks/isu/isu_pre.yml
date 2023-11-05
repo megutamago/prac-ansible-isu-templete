@@ -1,6 +1,6 @@
 - name: file
   file:
-    path: /home/isucon/.ssh/
+    path: "{{ home_dir }}/.ssh/"
     state: directory
     recurse: yes
     owner: isucon
@@ -9,7 +9,7 @@
 - name: Copy
   copy:
     src: /home/ubuntu/.ssh/authorized_keys
-    dest: /home/isucon/.ssh/
+    dest: "{{ home_dir }}/.ssh/"
     owner: isucon
     group: isucon
     mode: '0600'

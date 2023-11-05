@@ -16,7 +16,7 @@
 #- name: shell
 #  shell: bash -lc "go get github.com/redis/go-redis/v8"
 #  args:
-#    chdir: /home/isucon/private_isu/webapp/golang/
+#    chdir: "{{ home_dir }}/{{ isu_dir_name }}/webapp/golang/"
 #  ignore_errors: yes
 #
 #- name: isu-go is restarted
