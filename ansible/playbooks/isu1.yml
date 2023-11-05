@@ -6,8 +6,8 @@
   max_fail_percentage: 0
   vars_files: ../vars/var1.yml
   tasks:
-    - include_tasks: "../tasks/{{ item }}"
+    - include: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks_for_isu }}"
+      ignore_errors: yes
     - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks }}"
-  ignore_errors: yes
