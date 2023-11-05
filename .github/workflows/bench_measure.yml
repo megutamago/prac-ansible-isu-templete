@@ -22,7 +22,7 @@ jobs:
           port: 22
           script: |
             sleep 7
-            sudo -u isucon curl -o ~/trace.out http://localhost:6060/debug/pprof/trace?seconds=60
+            sudo -u isucon curl -o /tmp/trace.out http://localhost:6060/debug/pprof/trace?seconds=60
   Bench:
     name: "Bench Job"
     runs-on: ubuntu-latest
@@ -78,4 +78,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
           script: |
-            sudo /home/isucon/.local/go/bin/go tool trace -http=localhost:1080 ~/trace.out &
+            sudo /home/isucon/.local/go/bin/go tool trace -http=localhost:1080 /tmp/trace.out &
