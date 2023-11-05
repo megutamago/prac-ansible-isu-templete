@@ -18,4 +18,6 @@ kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:19999:localhost:19999 x.x.x.x' | grep -
 kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:1080:localhost:1080 x.x.x.x' | grep -v grep | awk '{print $2}')
 kill $(ps aux | grep 'ssh -fN -L 0.0.0.0:3306:localhost:3306 x.x.x.x' | grep -v grep | awk '{print $2}')
 ps aux | grep ssh
+
+test
 ```
