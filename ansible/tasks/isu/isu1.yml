@@ -14,7 +14,7 @@
   #vars_files: ../vars/env.yml
   git:
     repo: https://github.com/megutamago/prac-ansible-isu-templete.git
-    dest: /home/isucon/prac-ansible-isu-templete
+    dest: /home/isucon/
 
 - name: Copy
   copy:
