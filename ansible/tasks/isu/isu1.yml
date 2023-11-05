@@ -11,7 +11,7 @@
     enabled: true
 
 - name: Git checkout
-  vars_files: ../vars/var1.yml
+  vars_files: ../vars/env.yml
   git:
     repo: "https://github.com/{{ env.git_user }}/{{ env.git_repo }}.git"
     dest: /home/isucon/{{ env.git_repo }}
