@@ -11,9 +11,9 @@
     enabled: true
 
 - name: Git checkout
-  #vars_files: ../vars/env.yml
+  vars_files: ../vars/env.yml
   git:
-    repo: https://github.com/megutamago/prac-ansible-isu-templete.git
+    repo: https://github.com/megutamago/{{ git_repo }}.git
     dest: /home/isucon/
 
 - name: Copy
