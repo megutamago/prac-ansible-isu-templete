@@ -70,12 +70,3 @@ jobs:
           script: |
             sudo sed -i '/^INSERT INTO `posts`/d' /var/log/mysql/mysql-slow.sql
             sudo pt-query-digest /var/log/mysql/mysql-slow.sql
-      - name: Exe pprof
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ vars.HOST1 }}
-          username: ubuntu
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          script: |
-            sudo /home/isucon/.local/go/bin/go tool trace -http=localhost:1080 /tmp/trace.out &
