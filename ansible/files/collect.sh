@@ -2,6 +2,14 @@
 set -eu
 
 # systemctl
+cat <<EOF
+
+#####################################
+#             systemctl             #
+#####################################
+
+EOF
+
 cat <<EOF > /tmp/pattern.txt
 apparmor.service
 apport.service
@@ -67,6 +75,14 @@ rm -f /tmp/pattern.txt /tmp/systemd-info.txt /tmp/result.txt
 
 
 # DB info
+cat <<EOF
+
+#####################################
+#              DB info              #
+#####################################
+
+EOF
+
 mysql -u isuconp -pisuconp isuconp -e "SHOW DATABASES;"
 mysql -u isuconp -pisuconp isuconp -e "SHOW TABLES;"
 
@@ -81,6 +97,14 @@ mysql -u isuconp -pisuconp isuconp -e "show index from posts\G"
 
 
 # MySQLTuner-perl
+cat <<EOF
+
+#####################################
+#          MySQLTuner-perl          #
+#####################################
+
+EOF
+
 wget http://mysqltuner.pl/ -O /tmp/mysqltuner.pl
 perl /tmp/mysqltuner.pl
 rm -f /tmp/mysqltuner.pl
