@@ -82,17 +82,23 @@ cat <<EOF
 #####################################
 
 EOF
-
+echo '######## SHOW DATABASES ########'
 mysql -u isuconp -pisuconp isuconp -e "SHOW DATABASES;"
+echo '######## SHOW TABLES ########'
 mysql -u isuconp -pisuconp isuconp -e "SHOW TABLES;"
 
 #mysql -u isuconp -pisuconp isuconp -e "SHOW VARIABLES \G"
 
+echo '######## SHOW CREATE TABLE comments ########'
 mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE comments \G"
+echo '######## SHOW CREATE TABLE posts ########'
 mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE posts \G"
+echo '######## SHOW CREATE TABLE users ########'
 mysql -u isuconp -pisuconp isuconp -e "SHOW CREATE TABLE users \G"
 
+echo '######## show index from comments ########'
 mysql -u isuconp -pisuconp isuconp -e "show index from comments\G"
+echo '######## show index from posts ########'
 mysql -u isuconp -pisuconp isuconp -e "show index from posts\G"
 
 
