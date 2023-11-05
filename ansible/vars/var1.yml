@@ -1,10 +1,10 @@
 var:
   isu1_tasks:
     #- isu/isu_pre.yml
-    - isu/isu1.yml
+    #- isu/isu1.yml
     #- isu/isu_add.yml
   isu1_tasks_for_isu:
-    #- common/common.yml
+    - common/common.yml
     #- monitoring/fluent-bit.yml
     #- monitoring/node_exporter.yml
     #- tasks_for_isu/alp.yml
