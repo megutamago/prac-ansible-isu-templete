@@ -1,0 +1,12 @@
+- name: Copy
+  copy:
+    src: ../../files/collect.sh
+    dest: /tmp
+    mode: '0755'
+
+- name: shell
+  shell: bash /tmp/collect.sh
+  register: result
+- name: show stdout
+  debug:
+    msg: "{{ result.stdout }}"
