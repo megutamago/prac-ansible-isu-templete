@@ -8,6 +8,7 @@
   tasks:
     - include: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks_for_isu }}"
-      when: var.isu1_tasks_for_isu is defined
+      when: var.isu1_tasks_for_isu
     - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu1_tasks }}"
+      when: var.isu1_tasks
