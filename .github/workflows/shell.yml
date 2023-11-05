@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
       - name: run script
-        run: cat shell/collect.sh
+        run: bash shell/collect.sh
   Shell2:
     name: "Shell2 Job"
     runs-on: ubuntu-latest
