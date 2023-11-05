@@ -8,7 +8,5 @@
   tasks:
     - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu2_tasks_for_isu }}"
-      ignore_errors: yes
     - include_tasks: "../tasks/{{ item }}"
       with_items: "{{ var.isu2_tasks }}"
-      ignore_errors: yes
