@@ -4,11 +4,13 @@
   user: ubuntu
   become: true
   max_fail_percentage: 0
-  vars_files: ../vars/var3.yml
+  vars_files:
+    - ../env.yml
+    - ../vars.yml
   tasks:
     - include_tasks: "../tasks/{{ item }}"
-      with_items: "{{ var.isu3_tasks_for_isu }}"
-      when: var.isu1_tasks_for_isu
+      with_items: "{{ var.isu3.other }}"
+      when: var.isu3.other
     - include_tasks: "../tasks/{{ item }}"
-      with_items: "{{ var.isu3_tasks }}"
-      when: var.isu1_tasks
+      with_items: "{{ var.isu3.tasks }}"
+      when: var.isu3.tasks
