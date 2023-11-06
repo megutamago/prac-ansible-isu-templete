@@ -1,6 +1,29 @@
 #!/bin/bash
 set -eu
 
+
+# ls nginx
+cat <<EOF
+
+#####################################
+#             systemctl             #
+#####################################
+
+EOF
+ls -l /etc/nginx
+
+
+# ls mysql
+cat <<EOF
+
+#####################################
+#             systemctl             #
+#####################################
+
+EOF
+ls -l /etc/mysql/*
+
+
 # systemctl
 cat <<EOF
 

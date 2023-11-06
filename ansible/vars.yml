@@ -2,20 +2,21 @@ var:
   isu1:
     tasks:
       - isu/isu_pre.yml
-      #- isu/isu1.yml
-      #- isu/isu_add.yml
+      - isu/isu1.yml
+      - isu/isu_add.yml
     other:
-      #- common/common.yml
+      - common/common.yml
       #- monitoring/fluent-bit.yml
       #- monitoring/node_exporter.yml
-      #- other/alp.yml
-      #- other/collect.yml
-      #- other/graphviz.yml
-      #- other/mysql.yml
+      - other/alp.yml
+      - other/collect.yml
+      - other/delve.yml
+      - other/graphviz.yml
+      - other/mysql.yml
       #- other/netdata.yml
-      #- other/nginx.yml
-      #- other/parameter.yml
-      #- other/percona.yml
+      - other/nginx.yml
+      - other/parameter.yml
+      - other/percona.yml
       #- other/redis.yml
   isu2:
     tasks:
