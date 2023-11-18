@@ -22,7 +22,7 @@ jobs:
           port: 22
           script: |
             sleep 7
-            sudo curl -o cpu.pprof http://localhost:6060/debug/pprof/profile?seconds=60
+            sudo curl -o /tmp/cpu.pprof http://localhost:6060/debug/pprof/profile?seconds=60
   Bench:
     name: "Bench Job"
     runs-on: ubuntu-latest
