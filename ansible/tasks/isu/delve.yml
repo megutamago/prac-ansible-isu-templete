@@ -1,9 +1,4 @@
-- name: Git checkout
-  git:
-    repo: https://github.com/go-delve/delve.git
-    dest: /tmp/delve
-
 - name: setup
-  shell: sudo -u isucon bash -lc "go install github.com/go-delve/delve/cmd/dlv"
+  shell: sudo -u isucon bash -lc "go get github.com/go-delve/delve/cmd/dlv"
   args:
-    chdir: "/tmp/delve"
+    chdir: "/home/isucon/private_isu/webapp/golang"
