@@ -4,13 +4,13 @@ var:
       - isu/isu_pre.yml
       - isu/isu1.yml
       - isu/isu_add.yml
+      - isu/delve.yml
     other:
       #- common/common.yml
       #- monitoring/fluent-bit.yml
       #- monitoring/node_exporter.yml
       #- other/alp.yml
       #- other/collect.yml
-      - other/delve.yml
       - other/graphviz.yml
       - other/mysql.yml
       #- other/netdata.yml
