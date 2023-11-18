@@ -1,6 +1,6 @@
 - name: Copy
   copy:
-    src: ../../files/collect.sh
+    src: ../../collect.sh
     dest: /tmp
     mode: '0755'
 
